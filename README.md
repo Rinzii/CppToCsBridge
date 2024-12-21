@@ -14,6 +14,7 @@ You need to define a macro to define what items the tool is allowed to touch. He
 
 These are the macros you need first.
 ```cpp
+// bridge.hpp
     #pragma once
 
     // NOLINTBEGIN
@@ -35,6 +36,7 @@ These are the macros you need first.
 Then all you have to do is this and the tool will handle the rest.
 
 ```cpp
+// testcode.hpp
 #pragma once
 
 #include "bridge.hpp"
@@ -60,6 +62,7 @@ namespace TestNamespace {
 Then  the following C++ code will be generated
 
 ```cpp
+// testcode_bridge.hpp [This line is not included in the generation]
 // THIS IS GENERATED CODE DO NOT EDIT DIRECTLY
 // FILE USED FOR GENERATION: testcode.hpp
 // GENERATION DATE: 2024-12-31 01:23
@@ -67,7 +70,7 @@ Then  the following C++ code will be generated
 // NOLINTBEGIN
 #pragma once
 
-#include "impact/engine.hpp"
+#include "testcode.hpp"
 #include <utility>
 extern "C" {
 namespace TestNamespace {
